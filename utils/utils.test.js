@@ -1,8 +1,22 @@
+var expect = require('expect');
+
 var utils = require('./utils');
 
-it('should square two numbers',()=> {
+it('should square a number',()=> {
     var res = utils.square(3);
-    if( res !== 9) {
-        throw Error(`res not matched ${res}`);
-    }
+    // if( res !== 9) {
+    //     throw Error(`res not matched ${res}`);
+    // }
+    expect(res).toBe(9);
+})
+
+it('should split the name',()=> {
+    var user = utils.setName({
+        fullName : 'Joydeep Maiti'
+    })
+    // console.log(user);
+    expect(user).toInclude({
+        firstName : 'Joydeep',
+        lastName : 'Maiti'
+    });
 })
