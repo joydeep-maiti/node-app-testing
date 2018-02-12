@@ -20,3 +20,13 @@ it('should split the name',()=> {
         lastName : 'Maiti'
     });
 })
+
+it('should add two numbers asynchronously',(done)=> {
+    // console.log('sum1');
+    utils.asyncAdd(2,3, (sum)=> {
+        expect(sum).toBe(5).toBeA('number');
+        // console.log('sum2');
+        done();
+    });
+    // console.log('sum3');
+});
